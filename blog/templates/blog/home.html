@@ -1,0 +1,24 @@
+{% extends 'blog/main.html'%}
+{% block main_section %}
+    {%for post in news %}
+      <div class="alert alert-light">
+        <h1> {{ post.title}} </h1>
+        <p> {{ post.text}} </p>
+        <span class="text-muted">дата:{{ post.date| date:'j F Y,  H:i:s '}} </span>
+        {% if post.aftor %}
+           <p><b>Автор:</b> <mark>{{ post.aftor}}</mark> </p>
+        {% else %}
+            <p><b>Автор:</b> <mark>Admin</mark> </p>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+{% endblock main_section %}
+
+{% block aside_news_section%}
+    <h3><b>10 movies for programmers</b></h3>
+    <img src="https://itproger.com/img/news/1477674462.jpg" class="img-thumbail mb-1">
+    <p>Смотрим фильмы про програмистов на английском языке</p>
+        <a href="https://itproger.com/news/1" target="_blank"><button class="btn-primary">Watch now</button>
+    </a>
+{% endblock aside_news_section%}
