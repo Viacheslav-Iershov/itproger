@@ -32,3 +32,6 @@ def example(request):
 
 def contact(request):
     return render(request, 'blog/contact.html')
+
+def colt(request):
+    return render(request, 'blog/colt.html')
